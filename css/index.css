@@ -15,7 +15,6 @@
     min-width: 1000px;
     z-index:-10;
     zoom: 1;
-    background: url(../images/bg.jpg) no-repeat;
     background-size: cover;
     background-position: center 0;
 }
