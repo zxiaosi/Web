@@ -1,3 +1,3 @@
 # web
 我的Web基地
-网站:xiaosi.world
+网站: zxiaosi.cn

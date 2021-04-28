@@ -4,39 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小四先生的Web</title>
-    <meta name="description" content="小四先生的Web基地,通往新世界的大门.小四先生的博客|小四先生的笔记">
+    <meta name="description" content="小四先生的Web基地,通往新世界的大门.小四先生的博客,小四先生的笔记,小四先生的看板">
     
     <!--- 网站图标 -->
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zxiaosi/cdn/Web/img/favicon.ico">
 
     <!-- 自定义css -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zxiaosi/cdn/Web/css/index.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/index.css"></link>
     
-    <!-- 百度收录 -->
-    <meta name="baidu-site-verification" content="code-ANhe48AvD3" />
+
 </head>
 <body>
-    <div class="bgimg">
-        <img src="https://api.kdcc.cn/img/" />
-    </div>
-
-    <ul>
-        <li><a href="https://xiaosi.world">web</a></li>
-        <li><a href="https://hexo.xiaosi.world">hexo</a></li>
-        <li><a href="https://doc.xiaosi.world/#/">docsify</a></li>
-    </ul>
-
-    <footer>
-    备案号&nbsp:&nbsp
-    <a href="http://www.miitbeian.gov.cn">豫ICP备20005724号-1</a>
-    </footer>
-    
+    <div class="bgimg" style="background-image: url(https://api.kdcc.cn/img/);"></div>
+    <!-- 必应每日一图 -->
     <?php
         $str = file_get_contents('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1');   //读取必应api
         $str = json_decode($str,true);                            //接受JSON 编码的字符串并且把它转换为 PHP变量
         $imgurl = 'https://cn.bing.com'.$str['images'][0]['url'];                               //获取图片url
         header("Location: {$imgurl}");                                                      // 跳转至目标图像
     ?>
+
+    <!-- 卡片 -->
+    <div class="grid" id="grid">
+        <photo-card img="https://mini.s-shot.ru/1280x800/PNG/1280/Z100/?https%3A%2F%2Fzxiaosi.cn" link="https://zxiaosi.cn/"></photo-card>
+        <photo-card img="https://mini.s-shot.ru/1280x800/PNG/1280/Z100/?https%3A%2F%2Fhexo.zxiaosi.cn" link="https://hexo.zxiaosi.cn/"></photo-card>
+        <photo-card img="https://mini.s-shot.ru/1024x768/JPEG/1024/Z100/?https%3A%2F%2Fvue.zxiaosi.cn" link="https://vue.zxiaosi.cn/"></photo-card>
+        <photo-card img="https://mini.s-shot.ru/1280x800/PNG/1280/Z100/?https%3A%2F%2Fgitee.com%2Fzxiaosi%2Fweb%2Fboard%3Ffullscreen%3D1
+" link="https://gitee.com/zxiaosi/web/board?fullscreen=1/"></photo-card>
+    </div>
+
+    <script src="https://s1.pstatp.com/cdn/expire-1-M/vue/2.2.2/vue.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>
